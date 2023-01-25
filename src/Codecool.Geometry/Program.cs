@@ -1,4 +1,8 @@
-﻿namespace Codecool.Geometry
+﻿using System;
+using System.Linq;
+using Codecool.Geometry.Shapes;
+
+namespace Codecool.Geometry
 {
     /// <summary>
     ///     This is the main class of your program which contains Main method
@@ -15,7 +19,27 @@
 
             while (isRunning)
             {
-                int option = 0;  // TODO read the keyboard here
+                int option = 6;  // TODO read the keyboard here
+                var mainMenuOptions = "Choose an option:\n" +
+                              "0. Exit\n" +
+                              "1. Add new shape\n" +
+                              "2. Show all shapes\n" +
+                              "3. Show shape with the largest perimeter\n" +
+                              "4. Show shape with the largest area\n" +
+                              "5. Show formulas";
+                Console.WriteLine(mainMenuOptions);
+                var selectedMainMenuOption = Console.ReadLine();
+                if (new string[] { "0", "1", "2", "3", "4", "5" }.Contains(selectedMainMenuOption))
+                {
+                    option = int.Parse(selectedMainMenuOption);
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine();
+                    Console.WriteLine("Wrong input!");
+                    Console.WriteLine();
+                }
 
                 switch (option)
                 {
@@ -35,7 +59,7 @@
                         // TODO Show formulas
                         break;
                     case 0:
-                        // TODO Exit
+                        isRunning = false;
                         break;
                 }
             }

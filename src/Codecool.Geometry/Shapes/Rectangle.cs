@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Codecool.Geometry.Shapes
 {
@@ -10,17 +11,41 @@ namespace Codecool.Geometry.Shapes
         /// <summary>
         ///     Gets formula for the area of the rectangle as a string.
         /// </summary>
-        public new static string AreaFormula => throw new NotImplementedException();
+        public new static string AreaFormula => "a×b";
 
         /// <summary>
         ///     Gets formula for the perimeter of the rectangle as a string.
         /// </summary>
-        public new static string PerimeterFormula => throw new NotImplementedException();
+        public new static string PerimeterFormula => "2×a+2×b";
 
         /// <inheritdoc />
-        public override double Area => throw new NotImplementedException();
+        public override double Area => _a * _b;
 
         /// <inheritdoc />
-        public override double Perimeter => throw new NotImplementedException();
+        public override double Perimeter => 2 * _a + 2 * _b;
+
+        protected readonly double _a;
+
+        private readonly double _b;
+
+        public Rectangle(double a, double b)
+        {
+            _a = a;
+            _b = b;
+        }
+        
+        public override string ToString()
+        {
+            var stringToShow = new StringBuilder()
+                .Append("Rectangle\n")
+                .Append("\n")
+                .Append($"a = {_a}, b = {_b}\n")
+                .Append($"Perimeter: {Perimeter}\n")
+                .Append($"Formula: {PerimeterFormula}\n")
+                .Append($"Area: {Area}\n")
+                .Append($"Formula: {AreaFormula}\n");
+
+            return stringToShow.ToString();
+        }
     }
 }
