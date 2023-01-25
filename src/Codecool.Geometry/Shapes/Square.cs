@@ -25,13 +25,8 @@ namespace Codecool.Geometry.Shapes
         public override string ToString()
         {
             var stringToShow = new StringBuilder()
-                .Append("Square\n")
-                .Append("\n")
-                .Append($"a = {_a}\n")
-                .Append($"Perimeter: {Perimeter}\n")
-                .Append($"Formula: {PerimeterFormula}\n")
-                .Append($"Area: {Area}\n")
-                .Append($"Formula: {AreaFormula}\n");
+                .Append($"{GetType().Name}, ")
+                .Append($"a = {_a}");
 
             return stringToShow.ToString();
         }

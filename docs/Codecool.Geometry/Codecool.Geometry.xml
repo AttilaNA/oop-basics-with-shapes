@@ -117,13 +117,6 @@
                 This property should be hidden by subclasses
             </summary>
         </member>
-        <member name="M:Codecool.Geometry.Shapes.Shape.CheckIfArgsAreGreaterThanZero(System.Double[])">
-            <summary>
-                Check if all args are greater than 0
-            </summary>
-            <param name="args">Arguments to check</param>
-            <returns>True if all of args are greater than 0</returns>
-        </member>
         <member name="P:Codecool.Geometry.Shapes.Shape.Area">
             <summary>
                Gets calculated shape's area
@@ -135,6 +128,13 @@
                 Gets calculated shape's perimeter.
             </summary>
             <returns>Perimeter of the shape</returns>
+        </member>
+        <member name="M:Codecool.Geometry.Shapes.Shape.CheckIfArgsAreGreaterThanZero(System.Double[])">
+            <summary>
+                Check if all args are greater than 0
+            </summary>
+            <param name="args">Arguments to check</param>
+            <returns>True if all of args are greater than 0</returns>
         </member>
         <member name="T:Codecool.Geometry.Shapes.Square">
             <summary>

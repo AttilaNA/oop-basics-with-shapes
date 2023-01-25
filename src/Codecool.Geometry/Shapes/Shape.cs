@@ -12,24 +12,14 @@ namespace Codecool.Geometry.Shapes
         ///     It is a static property so it cannot be abstract
         ///     This property should be hidden by subclasses
         /// </summary>
-        public static string AreaFormula => throw new NotImplementedException();
+        public abstract string AreaFormula { get; }
 
         /// <summary>
         ///     Gets formula for the perimeter of the shape as a string.
         ///     It is a static property so it cannot be abstract
         ///     This property should be hidden by subclasses
         /// </summary>
-        public static string PerimeterFormula => throw new NotImplementedException();
-
-        /// <summary>
-        ///     Check if all args are greater than 0
-        /// </summary>
-        /// <param name="args">Arguments to check</param>
-        /// <returns>True if all of args are greater than 0</returns>
-        public static bool CheckIfArgsAreGreaterThanZero(params double[] args)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract string PerimeterFormula { get; }
 
         /// <summary>
         ///    Gets calculated shape's area
@@ -42,5 +32,16 @@ namespace Codecool.Geometry.Shapes
         /// </summary>
         /// <returns>Perimeter of the shape</returns>
         public abstract double Perimeter { get; }
+        
+        /// <summary>
+        ///     Check if all args are greater than 0
+        /// </summary>
+        /// <param name="args">Arguments to check</param>
+        /// <returns>True if all of args are greater than 0</returns>
+        public static bool CheckIfArgsAreGreaterThanZero(params double[] args)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

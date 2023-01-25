@@ -11,12 +11,12 @@ namespace Codecool.Geometry.Shapes
         /// <summary>
         ///     Gets formula for the area of the rectangle as a string.
         /// </summary>
-        public new static string AreaFormula => "a×b";
+        public override string AreaFormula => "a×b";
 
         /// <summary>
         ///     Gets formula for the perimeter of the rectangle as a string.
         /// </summary>
-        public new static string PerimeterFormula => "2×a+2×b";
+        public override string PerimeterFormula => "2×a+2×b";
 
         /// <inheritdoc />
         public override double Area => _a * _b;
@@ -37,13 +37,8 @@ namespace Codecool.Geometry.Shapes
         public override string ToString()
         {
             var stringToShow = new StringBuilder()
-                .Append("Rectangle\n")
-                .Append("\n")
-                .Append($"a = {_a}, b = {_b}\n")
-                .Append($"Perimeter: {Perimeter}\n")
-                .Append($"Formula: {PerimeterFormula}\n")
-                .Append($"Area: {Area}\n")
-                .Append($"Formula: {AreaFormula}\n");
+                .Append($"{GetType().Name}, ")
+                .Append($"a = {_a}, b = {_b}");
 
             return stringToShow.ToString();
         }

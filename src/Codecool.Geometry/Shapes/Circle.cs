@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 
 namespace Codecool.Geometry.Shapes
 {
@@ -11,12 +13,12 @@ namespace Codecool.Geometry.Shapes
         /// <summary>
         ///     Gets formula for the area of the circle as a string.
         /// </summary>
-        public new static string AreaFormula => "π×r×r";
+        public override string AreaFormula => "π×r×r";
 
         /// <summary>
         ///     Gets formula for the perimeter of the circle as a string.
         /// </summary>
-        public new static string PerimeterFormula => "2×π×r";
+        public override string PerimeterFormula => "2×π×r";
 
         /// <inheritdoc />
         public override double Area => Math.PI*_r*_r;
@@ -34,13 +36,8 @@ namespace Codecool.Geometry.Shapes
         public override string ToString()
         {
             var stringToShow = new StringBuilder()
-                .Append($"{GetType().Name}\n")
-                .Append("\n")
-                .Append($"r = {_r}\n")
-                .Append($"Perimeter: {Perimeter}\n")
-                .Append($"Formula: {PerimeterFormula}\n")
-                .Append($"Area: {Area}\n")
-                .Append($"Formula: {AreaFormula}\n");
+                .Append($"{GetType().Name}, ")
+                .Append($"r = {_r}");
 
             return stringToShow.ToString();
         }

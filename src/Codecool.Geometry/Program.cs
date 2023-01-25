@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Codecool.Geometry.Containers;
 using Codecool.Geometry.Shapes;
 
 namespace Codecool.Geometry
@@ -45,6 +46,11 @@ namespace Codecool.Geometry
                 {
                     case 1:
                         // TODO Add new shape
+                        var shapes = new ShapeCollection();
+                        shapes.AddShape(new Circle(4));
+                        shapes.AddShape(new Triangle(3, 5, 6));
+                        shapes.AddShape(new EquilateralTriangle(6));
+                        shapes.GetShapesTable();
                         break;
                     case 2:
                         // TODO Show all shapes
