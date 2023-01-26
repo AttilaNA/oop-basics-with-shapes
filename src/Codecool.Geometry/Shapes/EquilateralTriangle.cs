@@ -11,12 +11,12 @@ namespace Codecool.Geometry.Shapes
         /// <summary>
         ///     Gets formula for the area of the triangle as a string.
         /// </summary>
-        public new static string AreaFormula => "a×a×sqrt(3)/4";
+        public override string AreaFormula => "a×a×sqrt(3)/4";
 
         /// <summary>
         ///     Gets formula for the perimeter of the triangle as a string.
         /// </summary>
-        public new static string PerimeterFormula => "3×a";
+        public override string PerimeterFormula => "3×a";
 
         public EquilateralTriangle(double a) : base(a, a, a)
         {

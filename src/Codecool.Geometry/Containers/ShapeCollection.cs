@@ -19,14 +19,32 @@ namespace Codecool.Geometry.Containers
             Shapes.Add(shape);
         }
 
-        public Shape GetLargestShapeByPerimeter()
+        public ShapeCollection GetLargestShapeByPerimeter()
         {
-            return Shapes.MaxBy(x => x.Perimeter);
+            if (Shapes.Count > 0)
+            {
+                var largestShapeByPerimeter = Shapes.MaxBy(x => x.Perimeter);
+                var shapeCollectionOfLargestShapeByPerimeter = new ShapeCollection();
+                shapeCollectionOfLargestShapeByPerimeter.AddShape(largestShapeByPerimeter);
+                return shapeCollectionOfLargestShapeByPerimeter;
+            }
+            var emptyShapeCollection = new ShapeCollection();
+            emptyShapeCollection.AddShape(new Empty());
+            return emptyShapeCollection;
         }
 
-        public Shape GetLargestShapeByArea()
+        public ShapeCollection GetLargestShapeByArea()
         {
-            return Shapes.MaxBy(x => x.Area);
+            if (Shapes.Count > 0)
+            {
+                var largestShapeByArea = Shapes.MaxBy(x => x.Area);
+                var shapeCollectionOfLargestShapeByArea = new ShapeCollection();
+                shapeCollectionOfLargestShapeByArea.AddShape(largestShapeByArea);
+                return shapeCollectionOfLargestShapeByArea;
+            }
+            var emptyShapeCollection = new ShapeCollection();
+            emptyShapeCollection.AddShape(new Empty());
+            return emptyShapeCollection;
         }
 
         public void GetShapesTable()
